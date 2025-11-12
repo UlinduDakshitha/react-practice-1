@@ -22,4 +22,18 @@
   margin-top: -14px;
 }
 
+ .barcode{
+   width: 100px;
+  height: 30px;
+  background: repeating-linear-gradient(
+    to right,
+    black 0px,
+    black 2px,
+    white 2px,
+    white 4px
+  );
  
+  margin-top: 8px;
+  margin-left: 15px;
+
+ }
