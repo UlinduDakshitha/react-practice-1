@@ -1,18 +1,15 @@
   import React from 'react'
  import './card.css'
  import Avatar from '@mui/material/Avatar';
- 
+ import React, { useState } from 'react';
  
  
  
  function Card() {
    return (
-    
-      
+       
       <div className="id-card">
-     
       <div className="overlay"></div>
-
       <div className="id-card-header top-dark"></div>
       <br />
       <div className="id-card-header top-light"></div>
@@ -33,12 +30,9 @@
       <p className="p1">ID: 123456789123456789</p>
       <br />
       <p className="p2">
-        Name: <br /> NAME SURNAME
-      </p>
+        Name: <br /> NAME SURNAME</p>
       <br />
-      <p className="p3">
-        Address: <br /> 123 ANYWERE STREET <br /> CITY,12345-875.
-      </p>
+      <p className="p3"> Address: <br /> 123 ANYWERE STREET <br /> CITY,12345-875.</p>
       <br />
       <p className="p4">
         Phone: <br /> +5581487898
@@ -47,6 +41,8 @@
         Expedition Date: <br /> 00/00/00
       </p>
       <div className="footer"></div>
+
+       
     </div>
   );
  }
