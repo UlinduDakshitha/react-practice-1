@@ -105,6 +105,7 @@
   background-color:gray;
   height:10px;
   margin-top:-7px;
+  margin-left: 20px;
 }
  
   .Second{
@@ -117,7 +118,13 @@
   font-family: "Segoe UI", Arial, sans-serif;
   overflow: hidden;
   margin: 20px auto;
-  height: 300px;
+  height: 450px;
   margin-top: -130px;
-
   }
+
+.header3{
+  margin-left: 80px; 
+  margin-top: 10px;
+  color:#07091d;  
+   font-weight:bold;
+}
