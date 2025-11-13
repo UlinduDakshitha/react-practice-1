@@ -10,12 +10,16 @@ function Card() {
   const [showDetails, setShowDetails] = useState(false);
 
   const handleClick = () => {
-    setShowDetails(!showDetails);
+    setShowDetails(true);
+  };
+
+  const handleClose = () => {
+    setShowDetails(false);
   };
 
   return (
     <div>
-      <div className="id-card" onClick={handleClick}>
+      {!showDetails && (<div className="id-card" onClick={handleClick} >
         <div className="overlay"></div>
         <div className="id-card-header top-dark"></div>
         <br />
@@ -54,10 +58,10 @@ function Card() {
         <div className="hover-layer">
           <p className="hover-text">click me </p>
         </div>
-      </div>
+      </div> )}
 
-      {showDetails && (
-        <div className="Second">
+      {showDetails &&  (
+        <div className="Second"  onClick={handleClose}>
           <h2 className="header3">NIC DETAILS</h2>
           <TextField
             id="demo-helper-text-misaligned"

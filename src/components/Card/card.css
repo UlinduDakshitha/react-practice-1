@@ -11,8 +11,8 @@
   height: 220px;
   margin-top: -60px;
   cursor: pointer;
-    transition: transform 0.3s ease;
-    z-index: 2;
+   transition: transform 0.3s ease, opacity 0.3s ease;
+     
 }
 
 
@@ -108,7 +108,7 @@
   background-color:gray;
   height:10px;
   margin-top:-7px;
-  margin-left: 20px;
+  margin-left: 0px;
 }
  
   .Second{
@@ -123,6 +123,7 @@
   margin: 20px auto;
   height: 450px;
   margin-top: -130px;
+  animation: fadeIn 0.4s ease-in-out;
   }
 
 .header3{
@@ -144,7 +145,7 @@
   height: 100%;
   background: rgba(0, 128, 0, 0.5); /* green transparent overlay */
   opacity: 0;
-  transition: opacity 0.3s ease;
+ 
 }
 
 
@@ -159,4 +160,15 @@
   transform: translate(-50%, -50%);
   color: white;
   font-size: 20px;
+}
+ 
+ @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
