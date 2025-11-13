@@ -10,12 +10,10 @@ function Card() {
   const [showDetails, setShowDetails] = useState(false);
 
   const handleClick = () => {
-    setShowDetails(true);
+    setShowDetails( true);
   };
 
-  const handleClose = () => {
-    setShowDetails(false);
-  };
+   
 
   return (
     <div>
@@ -60,8 +58,9 @@ function Card() {
         </div>
       </div> )}
 
-      {showDetails &&  (
-        <div className="Second"  onClick={handleClose}>
+      {showDetails && 
+       (
+        <div className="Second">
           <h2 className="header3">NIC DETAILS</h2>
           <TextField
             id="demo-helper-text-misaligned"
