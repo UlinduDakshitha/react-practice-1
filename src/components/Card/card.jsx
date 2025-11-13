@@ -1,15 +1,28 @@
   import React from 'react'
  import './card.css'
  import Avatar from '@mui/material/Avatar';
+  import { useState } from 'react';
  
  
  
  
  function Card() {
+  const [showDetailCard, setShowDetailCard] = useState(false);
+
+  const handleCardClick = () => {
+    setShowDetailCard(true);
+  };
+
+  // Function to close the detail card
+  const handleClose = (e) => {
+    // Prevents closing if clicking inside the card content itself (optional logic)
+    e.stopPropagation();
+    setShowDetailCard(false);
+  };
    return (
     
    
-      <div className="id-card">
+      <div className="id-card" onClick={handleCardClick}>
       <div className="overlay"></div>
       <div className="id-card-header top-dark"></div>
       <br />
@@ -43,7 +56,8 @@
       </p>
       <div className="footer"></div>
 
-       
+
+     
     </div>
   );
  }
