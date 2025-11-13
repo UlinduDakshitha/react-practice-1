@@ -12,10 +12,7 @@
   const handleCardClick = () => {
     setShowDetailCard(true);
   };
-
-  // Function to close the detail card
   const handleClose = (e) => {
-    // Prevents closing if clicking inside the card content itself (optional logic)
     e.stopPropagation();
     setShowDetailCard(false);
   };
