@@ -51,6 +51,9 @@ function Card() {
           Expedition Date: <br /> 00/00/00
         </p>
         <div className="footer"></div>
+        <div className="hover-layer">
+          <p className="hover-text">click me </p>
+        </div>
       </div>
 
       {showDetails && (

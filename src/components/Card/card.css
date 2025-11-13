@@ -10,6 +10,9 @@
   margin: 20px auto;
   height: 220px;
   margin-top: -60px;
+  cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 2;
 }
 
 
@@ -127,4 +130,33 @@
   margin-top: 10px;
   color:#07091d;  
    font-weight:bold;
+}
+
+.id-card:hover {
+  transform: translateY(-5px);
+}
+
+.hover-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 128, 0, 0.5); /* green transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+.id-card:hover .hover-layer {
+  opacity: 1;  
+}
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
 }
