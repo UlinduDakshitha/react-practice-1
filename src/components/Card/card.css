@@ -1,4 +1,4 @@
- .id-card {
+  .id-card {
   width: 380px;
   background-color: white;
   border: 1px solid #ccc;
@@ -33,7 +33,43 @@
     white 4px
   );
  
-  margin-top: 8px;
+  margin-top: 12px;
   margin-left: 15px;
 
  }
+.header2{
+  margin-left: 150px;
+  margin-top: -140px;
+  color:#07091d;  
+   font-weight:bold;
+}
+
+.p1{
+  margin-left: 150px;
+  margin-top: -10px;
+  color:#07091d;  
+   font-weight:bold;
+   font-size: 10px;
+}
+
+.p2{
+  margin-left: 150px;
+  margin-top: -30px;
+  color:#07091d;  
+   font-weight:bold;
+   font-size: 10px;
+}
+.p3{
+  margin-left: 150px;
+  margin-top: -28px;
+  color:#07091d;  
+   font-weight:bold;
+   font-size: 10px;
+}
+.p4{
+  margin-left: 150px;
+  margin-top: -28px;
+  color:#07091d;  
+   font-weight:bold;
+   font-size: 10px;
+}
