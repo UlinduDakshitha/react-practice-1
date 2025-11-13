@@ -1,4 +1,4 @@
-.id-card {
+  .id-card {
   position: relative;
   width: 380px;
   background-color: white;
@@ -78,7 +78,7 @@
 
 .p2{
   margin-left: 150px;
-  margin-top: -33px;
+  margin-top: 10px;
   color:#07091d;  
    font-weight:bold;
    font-size: 10px;
@@ -92,7 +92,7 @@
 }
 .p4{
   margin-left: 150px;
-  margin-top: -33px;
+  margin-top: -26px;
   color:#07091d;  
    font-weight:bold;
    font-size: 10px;
