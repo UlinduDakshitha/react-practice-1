@@ -106,5 +106,18 @@
   height:10px;
   margin-top:-7px;
 }
-
  
+  .Second{
+       position: relative;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+  margin: 20px auto;
+  height: 300px;
+  margin-top: -130px;
+
+  }
