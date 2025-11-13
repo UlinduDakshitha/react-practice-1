@@ -1,13 +1,14 @@
   import React from 'react'
  import './card.css'
  import Avatar from '@mui/material/Avatar';
- import React, { useState } from 'react';
+ 
  
  
  
  function Card() {
    return (
-       
+    
+   
       <div className="id-card">
       <div className="overlay"></div>
       <div className="id-card-header top-dark"></div>
