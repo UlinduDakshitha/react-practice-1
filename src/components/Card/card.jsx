@@ -9,7 +9,7 @@ function Card() {
   const [showDetails, setShowDetails] = useState(false);
   const [nic, setNic] = useState("");
   const [nicResult, setNicResult] = useState(null);
-  
+ 
   const handleClick = () => {
     setShowDetails(true);
   };
