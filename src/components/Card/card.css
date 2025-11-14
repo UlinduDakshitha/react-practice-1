@@ -14,8 +14,6 @@
    transition: transform 0.3s ease, opacity 0.3s ease;
      
 }
-
-
 .overlay {
   position: absolute;
   top: 0;
@@ -34,7 +32,6 @@
   z-index: 0;
   border-radius: 10px;
 }
-
 .id-card-header {
   height: 17px;
 }
@@ -45,7 +42,6 @@
   background-color: #00796b;
   margin-top: -18px;
 }
-
  .barcode{
    width: 100px;
   height: 30px;
@@ -59,7 +55,6 @@
  
   margin-top: 12px;
   margin-left: 15px;
-
  }
 .header2{
   margin-left: 150px;
@@ -110,7 +105,7 @@
   margin-top:-7px;
   margin-left: 0px;
 }
- 
+ /* second card */
   .Second{
        position: relative;
   width: 300px;
