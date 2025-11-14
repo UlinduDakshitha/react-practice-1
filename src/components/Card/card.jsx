@@ -1,4 +1,4 @@
- import React, { useState,useEffect } from "react";
+ import React, { useState } from "react";
 import "./card.css";
 import Avatar from "@mui/material/Avatar";
 import TextField from "@mui/material/TextField";
@@ -7,46 +7,26 @@ import lankaNIC from "lanka-nic";
 
 function Card() {
   const [showDetails, setShowDetails] = useState(false);
-    const [nic, setNic] = useState("");
-  const [details, setDetails] = useState({
-    nic: "",
-    birthday: "",
-    gender: ""
-  });
-
-  const [submittedNIC, setSubmittedNIC] = useState(""); 
-
+  const [nic, setNic] = useState("");
+  const [nicResult, setNicResult] = useState(null);
+ 
   const handleClick = () => {
     setShowDetails(true);
   };
 
   const handleSubmit = () => {
-    setSubmittedNIC(nic); // trigger useEffect
-  };
-
-  // Runs whenever the user submits a NIC
-  useEffect(() => {
-    if (!submittedNIC) return;
-
     try {
-      const result = lankaNIC(submittedNIC);
-
+      const result = lankaNIC(nic);
       if (!result) {
         alert("Invalid NIC number");
         return;
       }
-
-      setDetails({
-        nic: submittedNIC,
-        birthday: result.dateOfBirth ? result.dateOfBirth.toISOString().split("T")[0] : "", // YYYY-MM-DD
-        gender: result.gender || ""
-      });
-
+      setNicResult(result);
     } catch (error) {
       alert("Invalid NIC format");
       console.error(error);
     }
-  }, [submittedNIC]);
+  };
 
   return (
     <div>
@@ -106,12 +86,12 @@ function Card() {
             Submit
           </Button>
 
-          {details.nic && (
+          {nicResult && (
             <div style={{ marginTop: "20px" }}>
               <TextField
                 label="NIC No"
                 variant="filled"
-                value={details.nic}
+                value={nicResult.nic}
                 sx={{ width: 280, marginLeft: "10px" }}
               />
               <br />
@@ -119,7 +99,7 @@ function Card() {
               <TextField
                 label="Birthday"
                 variant="filled"
-                value={details.birthday}
+                value={nicResult.birthday}
                 sx={{ width: 280, marginLeft: "10px" }}
               />
               <br />
@@ -127,7 +107,7 @@ function Card() {
               <TextField
                 label="Gender"
                 variant="filled"
-                value={details.gender}
+                value={nicResult.gender}
                 sx={{ width: 280, marginLeft: "10px" }}
               />
             </div>
