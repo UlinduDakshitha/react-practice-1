@@ -16,6 +16,10 @@ function Card() {
 
   const [submittedNIC, setSubmittedNIC] = useState(""); 
 
+  const handleClick = () => {
+    setShowDetails(true);
+  };
+
   const handleSubmit = () => {
     setSubmittedNIC(nic); // trigger useEffect
   };
@@ -25,7 +29,7 @@ function Card() {
     if (!submittedNIC) return;
 
     try {
-      const result = lankaNIC.getInfoFromNIC(submittedNIC);
+      const result = lankaNIC(submittedNIC);
 
       if (!result) {
         alert("Invalid NIC number");
@@ -34,8 +38,8 @@ function Card() {
 
       setDetails({
         nic: submittedNIC,
-        birthday: result.dateOfBirth.toISOString().split("T")[0], // YYYY-MM-DD
-        gender: result.gender
+        birthday: result.dateOfBirth ? result.dateOfBirth.toISOString().split("T")[0] : "", // YYYY-MM-DD
+        gender: result.gender || ""
       });
 
     } catch (error) {
