@@ -9,7 +9,7 @@ function Card() {
   const [showDetails, setShowDetails] = useState(false);
   const [nic, setNic] = useState("");
   const [nicResult, setNicResult] = useState(null);
-
+  
   const handleClick = () => {
     setShowDetails(true);
   };
@@ -44,8 +44,7 @@ function Card() {
               marginTop: "20px",
               borderRadius: "100px",
               width: "90px",
-              height: "90px",
-            }}
+              height: "90px", }}
           />
           <div className="barcode"></div>
 
@@ -115,6 +114,7 @@ function Card() {
           )}
         </div>
       )}
+        
     </div>
   );
 }
