@@ -7,26 +7,42 @@ import lankaNIC from "lanka-nic";
 
 function Card() {
   const [showDetails, setShowDetails] = useState(false);
-  const [nic, setNic] = useState("");
-  const [nicResult, setNicResult] = useState(null);
- 
-  const handleClick = () => {
-    setShowDetails(true);
-  };
+    const [nic, setNic] = useState("");
+  const [details, setDetails] = useState({
+    nic: "",
+    birthday: "",
+    gender: ""
+  });
+
+  const [submittedNIC, setSubmittedNIC] = useState(""); 
 
   const handleSubmit = () => {
+    setSubmittedNIC(nic); // trigger useEffect
+  };
+
+  // Runs whenever the user submits a NIC
+  useEffect(() => {
+    if (!submittedNIC) return;
+
     try {
-      const result = lankaNIC(nic);
+      const result = lankaNIC.getInfoFromNIC(submittedNIC);
+
       if (!result) {
         alert("Invalid NIC number");
         return;
       }
-      setNicResult(result);
+
+      setDetails({
+        nic: submittedNIC,
+        birthday: result.dateOfBirth.toISOString().split("T")[0], // YYYY-MM-DD
+        gender: result.gender
+      });
+
     } catch (error) {
       alert("Invalid NIC format");
       console.error(error);
     }
-  };
+  }, [submittedNIC]);
 
   return (
     <div>
@@ -86,12 +102,12 @@ function Card() {
             Submit
           </Button>
 
-          {nicResult && (
+          {details.nic && (
             <div style={{ marginTop: "20px" }}>
               <TextField
                 label="NIC No"
                 variant="filled"
-                value={nicResult.nic}
+                value={details.nic}
                 sx={{ width: 280, marginLeft: "10px" }}
               />
               <br />
@@ -99,7 +115,7 @@ function Card() {
               <TextField
                 label="Birthday"
                 variant="filled"
-                value={nicResult.birthday}
+                value={details.birthday}
                 sx={{ width: 280, marginLeft: "10px" }}
               />
               <br />
@@ -107,7 +123,7 @@ function Card() {
               <TextField
                 label="Gender"
                 variant="filled"
-                value={nicResult.gender}
+                value={details.gender}
                 sx={{ width: 280, marginLeft: "10px" }}
               />
             </div>
