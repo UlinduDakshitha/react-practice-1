@@ -74,7 +74,7 @@ function Card() {
           <TextField
             label="Enter NIC No"
             value={nic}
-            onChange={(e) => setNic(e.target.value)}
+            onChange={(e) => setNic(e.target.value.slice(2))}
             sx={{ width: 280, marginLeft: "10px" }}
           />
 
