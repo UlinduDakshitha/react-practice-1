@@ -3,7 +3,7 @@ import "./card.css";
 import Avatar from "@mui/material/Avatar";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-// import { getInfoFromNIC } from "lanka-nic";
+import { getInfoFromNIC } from "lanka-nic";
  
 
 function Card() {
