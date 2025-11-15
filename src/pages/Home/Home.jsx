@@ -1,14 +1,14 @@
-import React from 'react'
-import './home.css'
-import Card from '../../components/Card/Card '
+ import React from 'react';
+import './home.css';
+import Card from "../../components/Card/card";
 
 function Home() {
   return (
     <>
-    <h1 className='header'>Check Nic Details</h1>
-    <Card/>
+      <h1 className='header'>Check Nic Details</h1>
+      <Card />
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

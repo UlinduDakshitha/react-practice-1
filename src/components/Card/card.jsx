@@ -3,7 +3,7 @@ import "./card.css";
 import Avatar from "@mui/material/Avatar";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import lankaNIC from "lanka-nic";
+import { getInfoFromNIC } from "lanka-nic";
 
 function Card() {
   const [showDetails, setShowDetails] = useState(false);
@@ -16,12 +16,16 @@ function Card() {
 
   const handleSubmit = () => {
     try {
-      const result = lankaNIC(nic);
+      const result = getInfoFromNIC(nic);
       if (!result) {
         alert("Invalid NIC number");
         return;
       }
-      setNicResult(result);
+      setNicResult({
+        nic: nic,
+        birthday: result.dateOfBirth ? new Date(result.dateOfBirth).toISOString().split("T")[0] : "",
+        gender: result.gender || ""
+      });
     } catch (error) {
       alert("Invalid NIC format");
       console.error(error);
