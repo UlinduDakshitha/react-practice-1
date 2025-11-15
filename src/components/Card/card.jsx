@@ -15,9 +15,15 @@ function Card() {
     setShowDetails(true);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const fullNic = nic.trim();
+    let nicChecked = fullNic;
+    if(/^\d{12}$/.test(nicChecked)){
+      nicChecked = nicChecked.slice(2);
+    }
     try {
-      const result = getInfoFromNIC(nic);
+      const result = getInfoFromNIC(nicChecked);
       if (!result) {
         alert("Invalid NIC number");
         return;
@@ -74,7 +80,7 @@ function Card() {
           <TextField
             label="Enter NIC No"
             value={nic}
-            onChange={(e) => setNic(e.target.value.slice(2))}
+            onChange={(e) => setNic(e.target.value)}
             sx={{ width: 280, marginLeft: "10px" }}
           />
 
