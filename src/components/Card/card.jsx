@@ -24,7 +24,7 @@ function Card() {
       }
       setNicResult({
         nic: nic,
-        birthday: result.dateOfBirth ? new Date(result.dateOfBirth).toISOString().split("V")[0] : "",
+        birthday: result.dateOfBirth ? new Date(result.dateOfBirth).toISOString().split("T")[0] : "",
         gender: result.gender || ""
       });
     } catch (error) {
